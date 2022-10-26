@@ -29,7 +29,43 @@
     }
 
     /* BANNER */
+    .container-banner{
+        height: auto !important;
+    }
     .container-banner img{
-        height: auto;
+        height: auto !important;
+    }
+
+    /* ITEM PRODUCT */
+    .item-product{
+        max-width: 170px !important;
+    }
+
+    /* SECTION VIDEO */
+    .text-video h1{
+        font-size: 40px !important;
+    }
+    
+    .text-video h2{
+        font-size: 30px !important;
+    }
+    
+}
+
+@media screen and (max-width: 360px) {
+
+    /* HEADER */
+    .container-header{
+        width: 90% !important;
+    }
+
+    /* ITEM PRODUCT */
+    .item-product{
+        max-width: 150px !important;
+    }
+
+    .item-buy{
+        border-top-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
     }
 }

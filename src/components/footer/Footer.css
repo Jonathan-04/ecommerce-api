@@ -1,0 +1,45 @@
+.footer{
+    width: 100%;
+    background-color: var(--color-blue-low);
+    margin-top: 120px;
+    padding-bottom: 50px;
+    display: flex;
+    place-items: center;
+}
+
+.container-footer{
+    width: 95%;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.text-footer{
+    margin-bottom: 30px;
+}
+
+.text-footer h1{
+    display: flex;
+    place-items: center;
+    margin-bottom: 40px;
+}
+
+.text-footer ul li{
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.download-app{
+    display: flex;
+    flex-direction: column;
+}
+
+.download-app h2{
+    margin-bottom: 40px;
+}
+
+.download-app img{
+    width: 150px;
+}
