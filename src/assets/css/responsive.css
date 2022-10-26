@@ -1,0 +1,35 @@
+@media screen and (max-width: 720px) {
+    
+    /* HEADER */
+    .logo-header{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo-header h1{
+        font-size: 24px;
+    }
+
+    .container-header label{
+        margin-left: 0px;
+    }
+
+    .input-search input{
+        width: 100px;
+    }
+
+    .navbar{
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        justify-content: space-around;
+        background-color: white;
+    }
+
+    /* BANNER */
+    .container-banner img{
+        height: auto;
+    }
+}
