@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import Logo from "../icons/Logo";
 import { AiOutlineShopping } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function Header() {
   return (
@@ -11,10 +13,12 @@ export default function Header() {
       <header className="header">
         <div className="container-header">
           <div className="logo-header">
-            <h1>
-              <Logo />
-              JesShop
-            </h1>
+            <Link to="/">
+              <h1>
+                <Logo />
+                JesShop
+              </h1>
+            </Link>
             <label htmlFor="search" className="input-search">
               <AiOutlineSearch />
               <input
@@ -26,9 +30,19 @@ export default function Header() {
             </label>
           </div>
           <nav className="navbar">
-            <AiOutlineHeart size={22} />
-            <AiOutlineShopping size={22} />
-            <button>Ingresar</button>
+            <div className="navbar-options">
+              <AiOutlineHeart size={22} />
+              <p>Favoritos</p>
+            </div>
+            <div className="navbar-options">
+              <AiOutlineShopping size={22} />
+              <p>Carrito</p>
+            </div>
+
+            <Link id="login" to="/login">
+              <AiOutlineUser size={22} />
+              Ingresar
+            </Link>
           </nav>
         </div>
       </header>

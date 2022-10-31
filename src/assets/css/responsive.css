@@ -24,8 +24,38 @@
         z-index: 2;
         bottom: 0;
         left: 0;
+        padding-bottom: 5px;
+        padding-top: 5px;
         justify-content: space-around;
-        background-color: white;
+        background-color: rgb(243, 243, 243);
+    }
+
+    .navbar-options p{
+        display: block !important;
+    }
+
+    #login svg{
+        display: block !important;
+        margin: 0px;
+    }
+    
+    .navbar a{
+        border-style: none !important;
+        padding: 0px !important;
+        background-color: transparent;
+        border: none !important;
+        border-radius: none !important;
+
+        transition: none !important;
+    }
+
+    .navbar a:hover{
+        background-color:transparent !important;
+        color: var(--color-font) !important;
+    }
+
+    .navbar-options svg{
+        margin: 0px !important;
     }
 
     /* BANNER */
@@ -49,8 +79,47 @@
     .text-video h2{
         font-size: 30px !important;
     }
+
+    /* CATALOGUE */
+    .filter{
+        display: none;
+    }
+    
+    .main-catalogue{
+        width: 95% !important;
+    }
+
+    #first{
+        margin-right: 0px !important;
+    }
+    
+    .item-offers {
+        width: 100% !important;
+    }
+
+    /* PRODUCT DETAILS */
+    .details-product{
+        margin-top: 50px !important;
+    }
+
+    .image-product, .text-product {
+        width: 90% !important;
+    }
     
 }
+
+@media screen and (max-width: 410px) {
+    
+    /* PRODUCT DETAILS */
+    .second-image{
+        max-width: 100px !important;
+    }
+
+    .add-product button{
+        padding: 15px 20px !important;
+    }
+}
+
 
 @media screen and (max-width: 360px) {
 
@@ -68,4 +137,6 @@
         border-top-left-radius: 0px !important;
         border-bottom-right-radius: 0px !important;
     }
+
+
 }
