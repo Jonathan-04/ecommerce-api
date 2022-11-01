@@ -11,7 +11,10 @@ font-family: 'Raleway', sans-serif;
 
 :root{
     --color-blue: #2A7AE4;
+    --color-blue-second: #8038FC;
     --color-blue-low: #EAF2FD;
+    --color-pink: #ff1ecb;
+    --color-violet: #8000FF;
     --color-font: #464646;
     --color-white: #fff;
 }

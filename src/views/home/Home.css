@@ -122,11 +122,11 @@
 }
 
 .item-buy:nth-child(1){
-    background-color: #8038FC;
+    background-color: var(--color-blue-second);
 }
 
 .item-buy:nth-child(2){
-    background-color: #FF511E;
+    background-color: var(--color-pink);
 }
 
 .item-buy:hover #img-buy{
@@ -135,6 +135,7 @@
 
 .item-buy img{
     width: 180px;
+    height: 180px;
     transition: all 300ms;
 }
 

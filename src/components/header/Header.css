@@ -67,7 +67,7 @@
     padding: 10px 30px;
     background-color: transparent;
     font-weight: 700;
-    border: 1px solid var(--color-blue);
+    border: 1px solid var(--color-violet);
     border-radius: 50px;
     cursor: pointer;
     font-size: 14px;
@@ -76,7 +76,7 @@
 }
 
 .navbar a:hover{
-    background-color: var(--color-blue);
+    background-color: var(--color-violet);
     color: white;
 }
 
