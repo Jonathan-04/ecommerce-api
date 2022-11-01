@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import "./Product.css";
+import PageTop from "../../components/PageTop";
 import InterestProduct from "../../components/itemProduct/InterestProduct";
 import Footer from "../../components/footer/Footer";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -73,6 +74,7 @@ export default function Product() {
         <InterestProduct min={0} max={4} />
       </section>
       <Footer />
+      <PageTop />
     </>
   );
 }

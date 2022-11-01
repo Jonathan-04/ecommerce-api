@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import PageTop from "../../components/PageTop";
 import Footer from "../../components/footer/Footer";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
@@ -74,7 +75,7 @@ export default function Home() {
         <section className="section-interes">
           <div className="title-section-product">
             <h2>Te puede Interesar</h2>
-            <Link>
+            <Link to="/catalogue">
               Ver mas <AiOutlineArrowRight />
             </Link>
           </div>
@@ -94,6 +95,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <PageTop />
     </>
   );
 }

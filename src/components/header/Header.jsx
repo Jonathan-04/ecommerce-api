@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import Logo from "../icons/Logo";
+import { AiFillShop } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -15,7 +15,7 @@ export default function Header() {
           <div className="logo-header">
             <Link to="/">
               <h1>
-                <Logo />
+                <AiFillShop />
                 JesShop
               </h1>
             </Link>

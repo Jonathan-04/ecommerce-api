@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import Logo from "../icons/Logo";
+import { AiFillShop } from "react-icons/ai";
 import GooglePlay from "../../assets/img/googlestore.png";
 import IosStore from "../../assets/img/iosstore.png";
 
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="container-footer">
           <div className="text-footer">
             <h1>
-              <Logo />
+              <AiFillShop />
               JesShop
             </h1>
             <ul>

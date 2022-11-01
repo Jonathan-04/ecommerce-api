@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Catalogue.css";
+import PageTop from "../../components/PageTop";
 import ItemProduct from "../../components/itemProduct/ItemProduct";
 import Footer from "../../components/footer/Footer";
 import Tacones from "../../assets/img/tacones.jpg";
@@ -79,6 +80,7 @@ export default function Catalogue() {
         </main>
       </section>
       <Footer />
+      <PageTop />
     </>
   );
 }
