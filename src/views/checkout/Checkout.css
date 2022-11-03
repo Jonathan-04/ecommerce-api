@@ -1,0 +1,212 @@
+.container-checkout{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    place-items: center;
+}
+
+.container-checkout h2{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-checkout{
+  margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.information-checkout{
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+}
+
+.inputs-checkout{
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+.inputs-checkout p{
+    padding: 10px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#title-form-checkout{
+  background-color: rgb(239, 239, 239);
+  height: 40px;
+  display: flex;
+  place-items: center;
+}
+
+.inputs-data-checkout{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputs-data-checkout .content{
+    display: block;
+    position: relative;
+    padding: 30px 10px 10px;
+}
+
+.inputs-data-checkout .content input{
+    display: block;
+    width: 85%;
+    border-style: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.216);
+    margin-bottom: 10px;
+}
+
+.inputs-data-checkout .content label{
+    display: block;
+    position: absolute;
+    width: auto;
+    top: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.517);
+    font-size: 14px;
+}
+
+/* ---------  Radio Buttons  ------------ */
+.rb-tipo-servicio{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rb-tipo-servicio p{
+    margin-bottom: 5px;
+}
+
+.rb-tipo-servicio p:nth-child(3){
+    color: rgb(82, 82, 82);
+    font-size: 14px;
+}
+
+.rb-tipo-servicio input[type="radio"] {
+    display: none;
+  }
+
+  .rb-tipo-servicio input[type="radio"] + label{
+      transition: all 300ms;
+  }
+  
+  .rb-tipo-servicio input[type="radio"]:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  .rb-tipo-servicio input[type="radio"]:disabled ~ label {
+    color: #bcc2bf;
+    border-color: #bcc2bf;
+    box-shadow: none;
+  }
+  
+  .lb-rb-tipo-servicio {
+    width: 30%;
+    background: white;
+    border: 1px solid var(--principal-color);
+    border-radius: 2px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
+
+  }
+
+  .lb-rb-tipo-servicio p{
+    margin-top: 5px;      
+  }
+  
+  .rb-tipo-servicio input[type="radio"]:checked + label {
+    box-shadow: 11px 11px 0px 2px var(--principal-color);
+
+  }
+
+  .information-checkout section{
+    margin-left: 20px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+  }
+
+  .products-details{
+    height: 300px;
+    overflow-y: scroll;
+  }
+
+
+  .details-checkout{
+    width: 40%;
+    text-align: center;
+  }
+
+  .products-details img{
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .details{
+    display: flex;
+    width: 100%;
+    place-items: center;
+  }
+
+  .details li{
+    padding: 10px;
+  }
+
+  #titulo-producto{
+    width: 200px;
+  }
+
+  #details-price{
+    font-weight: bold;
+  }
+
+  #order-title{
+    font-weight: bold;
+  }
+
+  .product-payment{
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .product-payment p{
+    margin-bottom: 30px;
+  }
+
+  .product-payment ul{
+    width: 83%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+  }
+
+  .product-payment ul li{
+    width: 100px;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .product-pay li:nth-child(1), .envio-pay li:nth-child(1){
+    color: rgb(77, 77, 77);
+  }
+
+  .total-pay{
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rgb(239, 239, 239);
+  }

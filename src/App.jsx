@@ -5,6 +5,7 @@ import Home from "./views/home/Home";
 import Catalogue from "./views/catalogue/Catalogue";
 import Login from "./views/login/Login";
 import Product from "./views/product/Product";
+import Checkout from "./views/checkout/Checkout";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/login/*" element={<Login />} />
         <Route path="/catalogue/product/:id" element={<Product />} />
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
     </>
   );

@@ -17,6 +17,7 @@ font-family: 'Raleway', sans-serif;
     --color-violet: #8000FF;
     --color-font: #464646;
     --color-white: #fff;
+    --principal-color: rgba(77, 0, 118, 0.56);
 }
 
 h1,h2,h3{

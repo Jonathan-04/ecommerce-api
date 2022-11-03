@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Link } from "react-router-dom";
 import "./Product.css";
 import PageTop from "../../components/PageTop";
 import InterestProduct from "../../components/itemProduct/InterestProduct";
@@ -60,7 +60,9 @@ export default function Product() {
           </p>
           <div className="add-product">
             <button id="add-favorite">Agregar a Favorito</button>
-            <button id="add-car">Comprar</button>
+            <Link to="/checkout">
+              <button id="add-car">Comprar</button>
+            </Link>
           </div>
         </div>
       </section>

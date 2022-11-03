@@ -110,7 +110,41 @@
     .footer{
         padding-bottom: 70px !important;
     }
+
+    /* CHECKOUT */
     
+    .information-checkout{
+        width: 95% !important;
+    }
+    
+    .lb-rb-tipo-servicio{
+        width: 45% !important;
+    }
+
+    .details-checkout{
+        width: 100% !important;
+    }
+
+    .information-checkout section{
+        margin-left: 0px !important;
+    }
+
+    .information-checkout{
+        padding: 0px !important;
+    }
+
+    #order-title{
+        margin-bottom: 30px;
+    }
+
+    .details{
+        justify-content: center;
+    }
+
+    .product-payment ul{
+        width: 95% !important;
+    }
+
 }
 
 @media screen and (max-width: 410px) {
@@ -131,6 +165,11 @@
 
     .item-buy img{
         width: 150px !important;
+    }
+
+    /* CHECKOUT */
+    #titulo-producto{
+        width: 100px !important;
     }
 }
 
