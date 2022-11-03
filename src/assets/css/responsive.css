@@ -105,6 +105,11 @@
     .image-product, .text-product {
         width: 90% !important;
     }
+
+    /* FOOTER */
+    .footer{
+        padding-bottom: 70px !important;
+    }
     
 }
 
@@ -117,6 +122,15 @@
 
     .add-product button{
         padding: 15px 20px !important;
+    }
+
+    .item-buy{
+        border-top-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+    .item-buy img{
+        width: 150px !important;
     }
 }
 
@@ -132,11 +146,4 @@
     .item-product{
         max-width: 150px !important;
     }
-
-    .item-buy{
-        border-top-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-    }
-
-
 }

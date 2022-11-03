@@ -32,7 +32,7 @@ export default function Register() {
           </li>
           <li>|</li>
           <li>
-            <Link to="resetPassword">Olvidé mi contraseña</Link>
+            <Link to="/login/resetPassword">Olvidé mi contraseña</Link>
           </li>
         </ul>
       </form>
