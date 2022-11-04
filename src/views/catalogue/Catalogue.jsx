@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "./Catalogue.css";
 import PageTop from "../../components/PageTop";
 import ItemProduct from "../../components/itemProduct/ItemProduct";
@@ -8,13 +8,18 @@ import Tacones from "../../assets/img/tacones.jpg";
 import Hogar from "../../assets/img/hogar.jpg";
 
 export default function Catalogue() {
+  let { category } = useParams();
   const [productData, setProductData] = useState();
 
   useEffect(() => {
     fetchAPI();
 
     async function fetchAPI() {
-      const res = await fetch("https://fakestoreapi.com/products");
+      const res = await fetch(
+        `https://fakestoreapi.com${
+          category === "all" ? "/products" : `/products/category/${category}`
+        }`
+      );
 
       const data = await res.json();
       setProductData(data);
@@ -34,16 +39,16 @@ export default function Catalogue() {
             <h3>Categorías</h3>
             <ul className="items-filter">
               <li>
-                <NavLink>Categoría 1</NavLink>
+                <a href="/catalogue/electronics">Electrónico</a>
               </li>
               <li>
-                <NavLink>Categoría 2</NavLink>
+                <a href="/catalogue/jewelery">Joyería</a>
               </li>
               <li>
-                <NavLink>Categoría 3</NavLink>
+                <a href="/catalogue/women's clothing">Ropa Mujer</a>
               </li>
               <li>
-                <NavLink>Categoría 4</NavLink>
+                <a href="/catalogue/men's clothing">Ropa Hombre</a>
               </li>
             </ul>
           </div>
@@ -70,7 +75,7 @@ export default function Catalogue() {
           </section>
           <section className="container-products">
             <div className="title-container-products">
-              <p>23 Resultados</p>
+              <p>{productData.length} Resultados</p>
               <p>Ordenar Por:</p>
             </div>
             {productData.map((item) => (

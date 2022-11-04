@@ -26,11 +26,14 @@ export default function Home() {
         <section className="section-interes">
           <div className="title-section-product">
             <h2>Te puede Interesar</h2>
-            <Link to="/catalogue">
+            <Link to="/catalogue/men's clothing">
               Ver mas <AiOutlineArrowRight />
             </Link>
           </div>
           <InterestProduct min={0} max={4} />
+          <div id="show-catalogue">
+            <Link to="/catalogue/all">Ver todos los productos</Link>
+          </div>
         </section>
         <section className="section-buy">
           <article className="item-buy">
@@ -75,11 +78,14 @@ export default function Home() {
         <section className="section-interes">
           <div className="title-section-product">
             <h2>Te puede Interesar</h2>
-            <Link to="/catalogue">
+            <Link to="/catalogue/jewelery">
               Ver mas <AiOutlineArrowRight />
             </Link>
           </div>
           <InterestProduct min={4} max={8} />
+          <div id="show-catalogue">
+            <Link to="/catalogue/all">Ver todos los productos</Link>
+          </div>
         </section>
         <section className="payment">
           <h2>Pagos Seguros!</h2>

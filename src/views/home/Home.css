@@ -25,6 +25,22 @@
     justify-content: space-between;
 }
 
+#show-catalogue{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#show-catalogue a{
+    background-color: var(--color-violet);
+    color: white;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
 .title-section-product{
     width: 100%;
     display: flex;

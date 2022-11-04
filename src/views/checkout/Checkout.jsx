@@ -2,6 +2,7 @@ import React from "react";
 import "./Checkout.css";
 import { MdOutlineLocalShipping as Shipping } from "react-icons/md";
 import { MdStore } from "react-icons/md";
+import PageTop from "../../components/PageTop";
 import Footer from "../../components/footer/Footer";
 
 export default function Checkout() {
@@ -144,6 +145,7 @@ export default function Checkout() {
         </form>
       </main>
       <Footer />
+      <PageTop />
     </>
   );
 }
