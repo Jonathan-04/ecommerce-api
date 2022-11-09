@@ -18,13 +18,15 @@ font-family: 'Raleway', sans-serif;
     --color-font: #464646;
     --color-white: #fff;
     --principal-color: rgba(77, 0, 118, 0.56);
+    --warning-color: #df2525;
+    --success-color: #047900;
 }
 
 h1,h2,h3{
     font-family: 'Poppins', sans-serif;
 }
 
-a,p,label,li,input,button{
+a,p,label,li,input,button,span{
     font-family: 'Raleway', sans-serif;
 }
 

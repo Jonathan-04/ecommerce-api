@@ -25,10 +25,11 @@
 
 .login input{
     width: 95%;
-    margin-bottom: 30px;
     outline: none;
     padding: 15px 10px;
     border-style: none;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
     font-weight: 600;
     background-color: rgb(245, 245, 245);
     font-size: 18px;
@@ -60,8 +61,33 @@
     font-weight: 600;
 }
 
+.input-container{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input-container .input-invalid{
+    border: 1px solid var(--warning-color);
+}
+
+.input-container .input-succes{
+    border: 1px solid var(--success-color);
+}
+
+.input-message-error {
+    color: var(--warning-color);
+    display: block;
+    border-top: 2px solid var(--warning-color);
+    padding-top: 5px;
+}
+
+
 /* FORM REGISTER */
 
-.register .name, .register .lastname{
-    width: 44%;
+.inputName, .inputLastName{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 }
+
