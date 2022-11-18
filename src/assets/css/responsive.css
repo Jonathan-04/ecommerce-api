@@ -123,6 +123,7 @@
 
     .details-checkout{
         width: 100% !important;
+        order: 1 !important;
     }
 
     .information-checkout section{

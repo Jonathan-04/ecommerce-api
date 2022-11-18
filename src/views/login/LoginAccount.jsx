@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export default function LoginAccount() {
+  const history = useNavigate("");
+
   const {
     register,
     formState: { errors },
@@ -12,7 +14,19 @@ export default function LoginAccount() {
   });
 
   const onSubmit = (data) => {
-    alert(`Has iniciado Sesión! ${data.email}`);
+    const userData = JSON.parse(sessionStorage.getItem("user")) || [];
+
+    if (!userData || userData.email !== data.email) {
+      alert("No existe un usuario con el Email ingresado");
+    } else if (
+      userData.email === data.email &&
+      userData.password === data.password
+    ) {
+      alert("Has iniciado Sesion");
+      history("/");
+    } else {
+      alert("Email y/o Contraseña incorrectos");
+    }
   };
 
   return (

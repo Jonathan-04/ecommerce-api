@@ -39,14 +39,14 @@ export default function Home() {
           <article className="item-buy">
             <div className="text-item-buy">
               <h2>La Tecnología a un solo click!</h2>
-              <Link>Comprar</Link>
+              <Link to="/catalogue/electronics">Comprar</Link>
             </div>
             <img id="img-buy" src={Monitor} alt="" />
           </article>
           <article className="item-buy">
             <div className="text-item-buy">
               <h2>Viste con tu propio estilo</h2>
-              <Link>Comprar</Link>
+              <Link to="/catalogue/women's clothing">Comprar</Link>
             </div>
             <img id="img-buy" src={Outfit} alt="" />
           </article>

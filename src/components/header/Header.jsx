@@ -31,12 +31,16 @@ export default function Header() {
           </div>
           <nav className="navbar">
             <div className="navbar-options">
-              <AiOutlineHeart size={22} />
-              <p>Favoritos</p>
+              <Link to="">
+                <AiOutlineHeart size={22} />
+                <p>Favoritos</p>
+              </Link>
             </div>
             <div className="navbar-options">
-              <AiOutlineShopping size={22} />
-              <p>Carrito</p>
+              <Link to="/myCart">
+                <AiOutlineShopping size={22} />
+                <p>Carrito</p>
+              </Link>
             </div>
 
             <Link id="login" to="/login">

@@ -2,6 +2,7 @@ import React from "react";
 
 import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import addCart from "../../views/cart/addCart";
 
 export default function ItemProduct({ data }, key) {
   return (
@@ -12,7 +13,9 @@ export default function ItemProduct({ data }, key) {
       </Link>
       <div className="price">
         <p>${data.price}</p>
-        <AiOutlineShopping size={24} />
+        <button id="addCart" onClick={() => addCart(data)}>
+          <AiOutlineShopping size={24} />
+        </button>
       </div>
     </article>
   );

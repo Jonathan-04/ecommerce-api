@@ -6,6 +6,7 @@ import Catalogue from "./views/catalogue/Catalogue";
 import Login from "./views/login/Login";
 import Product from "./views/product/Product";
 import Checkout from "./views/checkout/Checkout";
+import MyCart from "./views/cart/MyCart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login/*" element={<Login />} />
         <Route path="/catalogue/product/:id" element={<Product />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="/myCart" element={<MyCart />} />
       </Routes>
     </>
   );

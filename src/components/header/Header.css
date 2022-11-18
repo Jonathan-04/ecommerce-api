@@ -61,7 +61,7 @@
     cursor: pointer;
 }
 
-.navbar a{
+.navbar #login{
     border-style: none;
     padding: 10px 30px;
     background-color: transparent;
@@ -74,19 +74,21 @@
     color: var(--color-font);
 }
 
-.navbar a:hover{
+.navbar #login:hover{
     background-color: var(--color-violet);
     color: white;
 }
 
-.navbar-options{
+.navbar-options a{
     display: flex;
     flex-direction: column;
     place-items: center;
+    color: var(--color-font);
 }
 
 .navbar-options p{
     display: none;
+    font-weight: 600;
 }
 
 #login{

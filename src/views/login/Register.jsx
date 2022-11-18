@@ -1,8 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const history = useNavigate("");
+
   const {
     register,
     formState: { errors },
@@ -12,7 +14,11 @@ export default function Register() {
   });
 
   const onSubmit = (data) => {
-    alert(`Registro exitoso ${data.name} ${data.lastName}`);
+    alert(
+      "Registro exitoso, los datos fueron almacenados mediante sessionStorage, una vez cierre la ventana se borrarán los datos."
+    );
+    sessionStorage.setItem("user", JSON.stringify(data));
+    history("/login");
   };
   return (
     <section className="container-login">

@@ -14,7 +14,7 @@
 }
 
 .form-checkout{
-  margin: auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -65,6 +65,7 @@
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.216);
     margin-bottom: 10px;
+    outline: none;
 }
 
 .inputs-data-checkout .content label{
@@ -156,6 +157,13 @@
   }
 
   .details{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    place-items: center;
+  }
+
+  .item-list{
     display: flex;
     width: 100%;
     place-items: center;
