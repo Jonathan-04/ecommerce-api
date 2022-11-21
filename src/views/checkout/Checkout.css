@@ -151,8 +151,7 @@
   }
 
   .products-details img{
-    width: 100px;
-    height: 80px;
+    width: 50px;
     object-fit: cover;
   }
 
@@ -174,7 +173,18 @@
   }
 
   #titulo-producto{
-    width: 200px;
+    display: flex;
+  }
+
+  #titulo-producto a{
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    color: var(--color-font);
   }
 
   #details-price{

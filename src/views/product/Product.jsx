@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useParams, Link } from "react-router-dom";
+import addCart from "../../components/functions/addCart";
+import { useParams, Link } from "react-router-dom";
 import "./Product.css";
 import PageTop from "../../components/PageTop";
 import InterestProduct from "../../components/itemProduct/InterestProduct";
@@ -61,7 +62,9 @@ export default function Product() {
           <div className="add-product">
             <button id="add-favorite">Agregar a Favorito</button>
             <Link to="/checkout">
-              <button id="add-car">Comprar</button>
+              <button id="add-car" onClick={() => addCart(productData)}>
+                Comprar
+              </button>
             </Link>
           </div>
         </div>
@@ -69,9 +72,9 @@ export default function Product() {
       <section className="section-interes">
         <div className="title-section-product">
           <h2>Te puede Interesar</h2>
-          <NavLink to="/catalogue">
+          <Link to="/catalogue/all">
             Ver mas <AiOutlineArrowRight />
-          </NavLink>
+          </Link>
         </div>
         <InterestProduct min={0} max={4} />
       </section>

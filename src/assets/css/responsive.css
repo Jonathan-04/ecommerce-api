@@ -112,6 +112,9 @@
     }
 
     /* CHECKOUT */
+    .form-checkout{
+        flex-direction: column-reverse !important;
+    }
     
     .information-checkout{
         width: 95% !important;
@@ -123,7 +126,7 @@
 
     .details-checkout{
         width: 100% !important;
-        order: 1 !important;
+        margin-bottom: 80px !important ;
     }
 
     .information-checkout section{
@@ -169,8 +172,8 @@
     }
 
     /* CHECKOUT */
-    #titulo-producto{
-        width: 100px !important;
+    #titulo-producto a{
+        width: 200px !important;
     }
 }
 

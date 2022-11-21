@@ -1,15 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Checkout.css";
 import { MdOutlineLocalShipping as Shipping } from "react-icons/md";
 import { MdStore } from "react-icons/md";
 import PageTop from "../../components/PageTop";
 import Footer from "../../components/footer/Footer";
 
-import Tenis from "../../assets/img/tenis.jpg";
-import Diadema from "../../assets/img/Diademas.png";
-import Camisa from "../../assets/img/camisa-mujer.jpg";
-
 export default function Checkout() {
+  const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
+
+  const totalPriceItems = cartList.reduce(
+    (sum, value) => (typeof value.price == "number" ? sum + value.price : sum),
+    0
+  );
+
+  const subTotal = Math.round(totalPriceItems);
+  const envio = subTotal > 120 ? 0 : 10;
+  const totalPrice = subTotal + envio;
+
   return (
     <>
       <main className="container-checkout">
@@ -122,42 +130,35 @@ export default function Checkout() {
               <p id="order-title">Orden</p>
               <div className="products-details">
                 <ul className="details">
-                  <div className="item-list">
-                    <li>
-                      <img src={Tenis} alt="" />
-                    </li>
-                    <li id="titulo-producto">Tenis x 1</li>
-                    <li id="details-price">$120.000</li>
-                  </div>
-                  <div className="item-list">
-                    <li>
-                      <img src={Diadema} alt="" />
-                    </li>
-                    <li id="titulo-producto">Diademas x 1</li>
-                    <li id="details-price">$70.000</li>
-                  </div>
-                  <div className="item-list">
-                    <li>
-                      <img src={Camisa} alt="" />
-                    </li>
-                    <li id="titulo-producto">Camisa x 1</li>
-                    <li id="details-price">$55.000</li>
-                  </div>
+                  {cartList.map((item) => (
+                    <div className="item-list" key={item.id}>
+                      <li>
+                        <img src={item.image} alt="Product" />
+                      </li>
+                      <li id="titulo-producto">
+                        <Link to={`/catalogue/product/${item.id}`}>
+                          {item.title}
+                        </Link>{" "}
+                        x 1
+                      </li>
+                      <li id="details-price">${item.price}</li>
+                    </div>
+                  ))}
                 </ul>
               </div>
               <div className="product-payment">
                 <p id="order-title">SubTotal:</p>
                 <ul className="product-pay">
                   <li>Producto:</li>
-                  <li>$ 20.000</li>
+                  <li>$ {subTotal}</li>
                 </ul>
                 <ul className="envio-pay">
                   <li>Envío:</li>
-                  <li>Gratis</li>
+                  <li>$ {envio}</li>
                 </ul>
                 <ul className="total-pay">
                   <li>TOTAL:</li>
-                  <li>$ 20.000</li>
+                  <li>$ {totalPrice}</li>
                 </ul>
               </div>
             </section>
