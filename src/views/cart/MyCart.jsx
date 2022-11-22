@@ -1,10 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { deleteItemCart } from "../../components/functions/CartList";
 import "./CartList.css";
 import { AiOutlineClose as Close } from "react-icons/ai";
+import { useState } from "react";
 
 export default function MyCart() {
   const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  const [quantity, setQuantity] = useState(1);
+
+  const increaseQuantity = (id) => {
+    const cartListUpdate = JSON.parse(sessionStorage.getItem("cartList"));
+    const quantityUpdate = cartListUpdate.find((item) => item.id === id);
+    setQuantity(quantity + 1);
+    quantityUpdate.quantity = quantity;
+    sessionStorage.setItem("cartList", JSON.stringify(cartListUpdate));
+  };
+
+  const deductQuantity = (id) => {
+    const cartListUpdate = JSON.parse(sessionStorage.getItem("cartList"));
+    const quantityUpdate = cartListUpdate.find((item) => item.id === id);
+    setQuantity(quantity - 1);
+    quantityUpdate.quantity = quantity;
+    sessionStorage.setItem("cartList", JSON.stringify(cartListUpdate));
+  };
 
   if (cartList.length === 0)
     return (
@@ -25,12 +44,36 @@ export default function MyCart() {
             <Link to={`/catalogue/product/${item.id}`}>{item.title}</Link>
           </h1>
           <div className="quantity-product">
-            <button>-</button>
-            <input type="text" name="quantity" id="quantity" defaultValue={1} />
-            <button>+</button>
+            <button
+              onClick={() => {
+                deductQuantity(item.id);
+              }}
+            >
+              -
+            </button>
+            <input
+              type="text"
+              name="quantity"
+              id="quantity"
+              value={item.quantity}
+            />
+            <button
+              onClick={() => {
+                increaseQuantity(item.id);
+              }}
+            >
+              +
+            </button>
           </div>
-          <p className="item-price">$ {item.price}</p>
-          <Close size={18} />
+          <p className="item-price">$ {item.price * item.quantity}</p>
+          <button
+            className="btn-delete"
+            onClick={() => {
+              deleteItemCart(item.id);
+            }}
+          >
+            <Close size={18} />
+          </button>
         </article>
       ))}
       <div className="pay">

@@ -108,3 +108,9 @@
     background-color: var(--color-violet);
     color: var(--color-white);
 }
+
+.btn-delete {
+    border-style: none;
+    background-color: transparent;   
+    cursor: pointer;
+}

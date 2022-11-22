@@ -10,7 +10,8 @@ export default function Checkout() {
   const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
 
   const totalPriceItems = cartList.reduce(
-    (sum, value) => (typeof value.price == "number" ? sum + value.price : sum),
+    (sum, value) =>
+      typeof value.price == "number" ? sum + value.price * value.quantity : sum,
     0
   );
 
@@ -139,9 +140,9 @@ export default function Checkout() {
                         <Link to={`/catalogue/product/${item.id}`}>
                           {item.title}
                         </Link>{" "}
-                        x 1
+                        x {item.quantity}
                       </li>
-                      <li id="details-price">${item.price}</li>
+                      <li id="details-price">${item.price * item.quantity}</li>
                     </div>
                   ))}
                 </ul>

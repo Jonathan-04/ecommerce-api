@@ -2,7 +2,7 @@ import React from "react";
 
 import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import addCart from "../functions/addCart";
+import { addCart } from "../functions/CartList";
 
 export default function ItemProduct({ data }, key) {
   return (
