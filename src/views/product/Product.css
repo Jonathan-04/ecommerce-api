@@ -29,6 +29,7 @@
 .text-product{
     width: 40%;
     color: var(--color-font);
+
 }
 
 .text-product h1{
@@ -44,13 +45,13 @@
 .text-product p{
     font-weight: 600;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .quantity-product{
     display: flex;
     place-items: center;
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .quantity-product button{
@@ -61,14 +62,11 @@
     font-size: 24px;
 }
 
-#quantity{
-    width: 55px;
-    height: 40px;
+.quantity-item{
     text-align: center;
-    outline: none;
-    border-style: none;
     font-weight: 700;
     font-size: 18px;
+    padding: 10px;
 }   
 
 .description-product span{

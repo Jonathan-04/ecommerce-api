@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "react-use-cart";
 import "./Checkout.css";
 import { MdOutlineLocalShipping as Shipping } from "react-icons/md";
 import { MdStore } from "react-icons/md";
@@ -7,16 +8,10 @@ import PageTop from "../../components/PageTop";
 import Footer from "../../components/footer/Footer";
 
 export default function Checkout() {
-  const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  const { items, cartTotal } = useCart();
 
-  const totalPriceItems = cartList.reduce(
-    (sum, value) =>
-      typeof value.price == "number" ? sum + value.price * value.quantity : sum,
-    0
-  );
-
-  const subTotal = Math.round(totalPriceItems);
-  const envio = subTotal > 120 ? 0 : 10;
+  const subTotal = Math.round(cartTotal);
+  const envio = subTotal > 120 ? 0 : 15;
   const totalPrice = subTotal + envio;
 
   return (
@@ -131,8 +126,8 @@ export default function Checkout() {
               <p id="order-title">Orden</p>
               <div className="products-details">
                 <ul className="details">
-                  {cartList.map((item) => (
-                    <div className="item-list" key={item.id}>
+                  {items.map((item, index) => (
+                    <div className="item-list" key={index}>
                       <li>
                         <img src={item.image} alt="Product" />
                       </li>
@@ -142,7 +137,7 @@ export default function Checkout() {
                         </Link>{" "}
                         x {item.quantity}
                       </li>
-                      <li id="details-price">${item.price * item.quantity}</li>
+                      <li id="details-price">${item.itemTotal}</li>
                     </div>
                   ))}
                 </ul>

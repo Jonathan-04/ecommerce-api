@@ -7,19 +7,22 @@ import Login from "./views/login/Login";
 import Product from "./views/product/Product";
 import Checkout from "./views/checkout/Checkout";
 import MyCart from "./views/cart/MyCart";
+import { CartProvider } from "react-use-cart";
 
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalogue/:category" element={<Catalogue />} />
-        <Route path="/login/*" element={<Login />} />
-        <Route path="/catalogue/product/:id" element={<Product />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="/myCart" element={<MyCart />} />
-      </Routes>
+      <CartProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogue/:category" element={<Catalogue />} />
+          <Route path="/login/*" element={<Login />} />
+          <Route path="/catalogue/product/:id" element={<Product />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="/myCart" element={<MyCart />} />
+        </Routes>
+      </CartProvider>
     </>
   );
 }

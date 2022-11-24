@@ -1,84 +1,79 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { deleteItemCart } from "../../components/functions/CartList";
+import GoToTop from "../../components/PageTop";
+import Footer from "../../components/footer/Footer";
 import "./CartList.css";
 import { AiOutlineClose as Close } from "react-icons/ai";
-import { useState } from "react";
+import { useCart } from "react-use-cart";
 
 export default function MyCart() {
-  const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
-  const [quantity, setQuantity] = useState(1);
+  GoToTop();
+  const {
+    isEmpty,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
 
-  const increaseQuantity = (id) => {
-    const cartListUpdate = JSON.parse(sessionStorage.getItem("cartList"));
-    const quantityUpdate = cartListUpdate.find((item) => item.id === id);
-    setQuantity(quantity + 1);
-    quantityUpdate.quantity = quantity;
-    sessionStorage.setItem("cartList", JSON.stringify(cartListUpdate));
-  };
-
-  const deductQuantity = (id) => {
-    const cartListUpdate = JSON.parse(sessionStorage.getItem("cartList"));
-    const quantityUpdate = cartListUpdate.find((item) => item.id === id);
-    setQuantity(quantity - 1);
-    quantityUpdate.quantity = quantity;
-    sessionStorage.setItem("cartList", JSON.stringify(cartListUpdate));
-  };
-
-  if (cartList.length === 0)
+  if (isEmpty)
     return (
-      <div className="cart-empty">
-        <h1>El carrito está vacío</h1>
-        <p>Se ve algo solitario... Porqué no</p>
-        <Link to="/catalogue/all">Descubres nuestros Productos</Link>
-      </div>
+      <>
+        <div className="cart-empty">
+          <h1>El carrito está vacío</h1>
+          <p>Se ve algo solitario... Porqué no</p>
+          <Link to="/catalogue/all">Descubres nuestros Productos</Link>
+        </div>
+        <Footer />
+      </>
     );
 
   return (
-    <main className="container-cart">
-      <p className="total-item-cart">{cartList.length} Productos</p>
-      {cartList.map((item) => (
-        <article key={item.id} className="item-cart">
-          <img src={item.image} alt="product" />
-          <h1 className="title-item">
-            <Link to={`/catalogue/product/${item.id}`}>{item.title}</Link>
-          </h1>
-          <div className="quantity-product">
+    <>
+      <main className="container-cart">
+        <p className="total-item-cart">{totalItems} Productos</p>
+        {items.map((item, index) => (
+          <article key={index} className="item-cart">
+            <img src={item.image} alt="product" />
+            <h1 className="title-item">
+              <Link to={`/catalogue/product/${item.id}`}>{item.title}</Link>
+            </h1>
+            <div className="quantity-product">
+              <button
+                onClick={() => {
+                  updateItemQuantity(item.id, item.quantity - 1);
+                }}
+              >
+                -
+              </button>
+              <p>{item.quantity}</p>
+              <button
+                onClick={() => {
+                  updateItemQuantity(item.id, item.quantity + 1);
+                }}
+              >
+                +
+              </button>
+            </div>
+            <p className="item-price">$ {item.price * item.quantity}</p>
             <button
+              className="btn-delete"
               onClick={() => {
-                deductQuantity(item.id);
+                removeItem(item.id);
               }}
             >
-              -
+              <Close size={18} />
             </button>
-            <input
-              type="text"
-              name="quantity"
-              id="quantity"
-              value={item.quantity}
-            />
-            <button
-              onClick={() => {
-                increaseQuantity(item.id);
-              }}
-            >
-              +
-            </button>
-          </div>
-          <p className="item-price">$ {item.price * item.quantity}</p>
-          <button
-            className="btn-delete"
-            onClick={() => {
-              deleteItemCart(item.id);
-            }}
-          >
-            <Close size={18} />
-          </button>
-        </article>
-      ))}
-      <div className="pay">
-        <Link to="/checkout">Ir a Pagar</Link>
-      </div>
-    </main>
+          </article>
+        ))}
+        <div className="pay">
+          <button onClick={() => emptyCart()}>Vaciar Carrito</button>
+          <Link to="/checkout">Ir a Pagar</Link>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

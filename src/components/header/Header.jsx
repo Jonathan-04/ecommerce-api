@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "react-use-cart";
 import "./Header.css";
 import { AiFillShop } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
@@ -8,6 +9,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 
 export default function Header() {
+  const { totalItems } = useCart();
+
   return (
     <>
       <header className="header">
@@ -36,7 +39,10 @@ export default function Header() {
                 <p>Favoritos</p>
               </Link>
             </div>
-            <div className="navbar-options">
+            <div className="navbar-options" id="cart">
+              <span id="count-favorites" className="count-favorites">
+                {totalItems}
+              </span>
               <Link to="/myCart">
                 <AiOutlineShopping size={22} />
                 <p>Carrito</p>

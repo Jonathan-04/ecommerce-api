@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { addCart } from "../../components/functions/CartList";
 import { useParams, Link } from "react-router-dom";
 import "./Product.css";
 import PageTop from "../../components/PageTop";
 import InterestProduct from "../../components/itemProduct/InterestProduct";
 import Footer from "../../components/footer/Footer";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useCart } from "react-use-cart";
 
 export default function Product() {
+  const { addItem } = useCart();
   const { id } = useParams();
 
   const [productData, setProductData] = useState();
@@ -47,7 +48,7 @@ export default function Product() {
             >
               -
             </button>
-            <input type="text" id="quantity" value={quantity} maxLength="2" />
+            <label className="quantity-item">{quantity}</label>
             <button
               onClick={() => {
                 setQuantity(quantity + 1);
@@ -62,7 +63,10 @@ export default function Product() {
           <div className="add-product">
             <button id="add-favorite">Agregar a Favorito</button>
             <Link to="/checkout">
-              <button id="add-car" onClick={() => addCart(productData)}>
+              <button
+                id="add-car"
+                onClick={() => addItem(productData, quantity)}
+              >
                 Comprar
               </button>
             </Link>

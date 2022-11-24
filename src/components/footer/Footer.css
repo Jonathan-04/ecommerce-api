@@ -3,6 +3,7 @@
     background-color: var(--color-blue-low);
     margin-top: 120px;
     display: flex;
+    flex-wrap: wrap;
     place-items: center;
 }
 
@@ -41,4 +42,25 @@
 
 .download-app img{
     width: 150px;
+}
+
+.developed{
+    width: 100%;
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.developed h2{
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.developed a{
+    color: black;
+}
+
+.developed svg{
+    margin: 5px;
 }

@@ -79,6 +79,10 @@
     color: white;
 }
 
+.navbar-options{
+    position: relative;
+}
+
 .navbar-options a{
     display: flex;
     flex-direction: column;
@@ -89,6 +93,18 @@
 .navbar-options p{
     display: none;
     font-weight: 600;
+}
+
+.count-favorites{
+    position: absolute;
+    top: 13px;
+    background-color: red;
+    color: white;
+    width: 15px;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
 }
 
 #login{

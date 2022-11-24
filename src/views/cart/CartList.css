@@ -80,15 +80,11 @@
     font-size: 24px;
 }
 
-#quantity{
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    outline: none;
-    border-style: none;
-    font-weight: 700;
-    font-size: 18px;
-}   
+.quantity-product p{
+    font-weight: 600;
+    padding: 10px;
+}
+
 
 .item-price{
     width: 10%;
@@ -98,7 +94,11 @@
 }
 
 .pay{
+    max-width: 410px;
     margin-top: 100px;
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
 }
 
 .pay a{
@@ -107,6 +107,16 @@
     font-weight: 700;
     background-color: var(--color-violet);
     color: var(--color-white);
+}
+
+.pay button{
+    padding: 14px 20px;
+    border-style: none;
+    border-radius: 3px;
+    font-weight: 700;
+    background-color: var(--color-font);
+    color: var(--color-white);
+    font-size: 14px;
 }
 
 .btn-delete {

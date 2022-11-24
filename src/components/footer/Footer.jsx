@@ -4,6 +4,9 @@ import { AiFillShop } from "react-icons/ai";
 import GooglePlay from "../../assets/img/googlestore.png";
 import IosStore from "../../assets/img/iosstore.png";
 
+import { AiFillGithub as GitHub } from "react-icons/ai";
+import { AiFillLinkedin as Linkedin } from "react-icons/ai";
+
 export default function Footer() {
   return (
     <>
@@ -26,6 +29,19 @@ export default function Footer() {
             <img src={GooglePlay} alt="GooglePlay" />
             <img src={IosStore} alt="IosStore" />
           </div>
+        </div>
+        <div className="developed">
+          <h2>Developed by: Jonathan Velásquez Vargas</h2>
+          <a
+            href="https://www.linkedin.com/in/jonathanvel04
+"
+            target="_blank"
+          >
+            <Linkedin size={26} />
+          </a>
+          <a href="https://github.com/Jonathan-04" target="_blank">
+            <GitHub size={26} />
+          </a>
         </div>
       </footer>
     </>

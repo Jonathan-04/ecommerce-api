@@ -1,10 +1,11 @@
 import React from "react";
-
-import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { addCart } from "../functions/CartList";
+import { useCart } from "react-use-cart";
+import { AiOutlineShopping } from "react-icons/ai";
 
 export default function ItemProduct({ data }, key) {
+  const { addItem } = useCart();
+
   return (
     <article className="item-product" key={key.id} id={data.id}>
       <Link to={`/catalogue/product/${data.id}`}>
@@ -13,7 +14,7 @@ export default function ItemProduct({ data }, key) {
       </Link>
       <div className="price">
         <p>${data.price}</p>
-        <button id="addCart" onClick={() => addCart(data)}>
+        <button id="addCart" onClick={() => addItem(data)}>
           <AiOutlineShopping size={24} />
         </button>
       </div>

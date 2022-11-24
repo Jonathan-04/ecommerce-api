@@ -58,6 +58,11 @@
         margin: 0px !important;
     }
 
+    .count-favorites{
+        top: 0px !important;
+        right: 9px !important;
+    }
+
     /* BANNER */
     .container-banner{
         height: auto !important;
@@ -174,6 +179,15 @@
     /* CHECKOUT */
     #titulo-producto a{
         width: 200px !important;
+    }
+
+    /* CART LIST */
+    .title-item{
+        display: none !important;
+    }
+
+    .item-price{
+        width: 25% !important;
     }
 }
 
