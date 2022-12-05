@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import auth from "../../firebase";
 
 export default function LoginAccount() {
   const history = useNavigate("");
@@ -14,19 +16,19 @@ export default function LoginAccount() {
   });
 
   const onSubmit = (data) => {
-    const userData = JSON.parse(sessionStorage.getItem("user")) || [];
-
-    if (!userData || userData.email !== data.email) {
-      alert("No existe un usuario con el Email ingresado");
-    } else if (
-      userData.email === data.email &&
-      userData.password === data.password
-    ) {
-      alert("Has iniciado Sesion");
-      history("/");
-    } else {
-      alert("Email y/o Contraseña incorrectos");
-    }
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        alert("Has iniciado Sesión!");
+        history("/");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        //const errorMessage = error.message;
+        alert(errorCode);
+      });
   };
 
   return (

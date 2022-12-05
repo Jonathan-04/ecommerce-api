@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Link } from "react-router-dom";
 import "./Catalogue.css";
 import PageTop from "../../components/PageTop";
 import ItemProduct from "../../components/itemProduct/ItemProduct";

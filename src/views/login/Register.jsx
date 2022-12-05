@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from "../../firebase";
 
 export default function Register() {
   const history = useNavigate("");
@@ -14,16 +16,26 @@ export default function Register() {
   });
 
   const onSubmit = (data) => {
-    alert(
-      "Registro exitoso, los datos fueron almacenados mediante sessionStorage, una vez cierre la ventana se borrarán los datos."
-    );
-    sessionStorage.setItem("user", JSON.stringify(data));
-    history("/login");
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        alert("Su cuenta ha sido creada exitosamente!");
+        history("/login");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        //const errorMessage = error.message;
+        alert(errorCode);
+        // ..
+      });
   };
   return (
     <section className="container-login">
       <form className="login register" onSubmit={handleSubmit(onSubmit)}>
         <h1>Registro</h1>
+        {/*
         <div className="input-container inputName">
           <input
             type="text"
@@ -52,6 +64,7 @@ export default function Register() {
             </span>
           )}
         </div>
+          */}
         <div className="input-container">
           <input
             type="email"

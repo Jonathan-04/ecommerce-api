@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import UserContextProvider from "./context/UserContext";
 import "./assets/css/responsive.css";
 import Header from "./components/header/Header";
 import Home from "./views/home/Home";
@@ -12,17 +13,19 @@ import { CartProvider } from "react-use-cart";
 function App() {
   return (
     <>
-      <CartProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalogue/:category" element={<Catalogue />} />
-          <Route path="/login/*" element={<Login />} />
-          <Route path="/catalogue/product/:id" element={<Product />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="/myCart" element={<MyCart />} />
-        </Routes>
-      </CartProvider>
+      <UserContextProvider>
+        <CartProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalogue/:category" element={<Catalogue />} />
+            <Route path="/login/*" element={<Login />} />
+            <Route path="/catalogue/product/:id" element={<Product />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="/myCart" element={<MyCart />} />
+          </Routes>
+        </CartProvider>
+      </UserContextProvider>
     </>
   );
 }
